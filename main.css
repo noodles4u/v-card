@@ -210,6 +210,20 @@ a:hover {
     width: 1000px;
   }
 }
+
+@media only screen and (max-width: 1200px) {
+  header section {
+    flex: 1;
+  }
+  .about-skills article {
+    min-height: 60vh;
+  }
+  p,
+  a {
+    font-size: 1.6rem;
+  }
+}
+
 @media only screen and (max-width: 1100px) {
   main {
     width: 70vw;
@@ -217,19 +231,9 @@ a:hover {
 
   .about-skills article {
     flex: 1 1 98%;
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  header section {
-    flex: 1;
-  }
-  .about-skills article {
-    min-height: 40vh;
-  }
-  p,
-  a {
-    font-size: 1.6rem;
+    height: 30vh;
+    min-height: 20vh;
+    margin-bottom: 4rem;
   }
 }
 
