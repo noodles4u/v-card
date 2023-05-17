@@ -49,9 +49,8 @@ header section:nth-of-type(2) {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 header {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
 }
 header section:first-child {
   flex: 1 1 20%;
@@ -97,29 +96,25 @@ figure img {
 }
 
 .about-skills {
-  display: flex;
+  display: grid;
   padding: 0.4em;
+  grid-template-columns: 1fr 1fr;
 
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+  grid-template-rows: minmax(100px, auto);
 }
 .about-skills article {
   margin: 1%;
-  flex: 1 1 48%;
   padding: 10px;
-  height: 16rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
 }
 .about-skills article a {
+  display: inline-block;
+
+  align-items: end;
+
   font-size: 1.2rem;
   margin-top: auto;
-  align-self: flex-end;
-  justify-content: flex-end;
-  align-content: flex-end;
   padding: 0.4rem;
   color: white;
   border-radius: 10px;
@@ -201,41 +196,15 @@ a:hover {
   border-radius: 10px;
   border: 1px solid rgba(238, 238, 238, 0.1);
 }
-
-@media only screen and (min-width: 1500px) {
-  main {
-    width: 1000px;
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  header section {
-    flex: 1;
-  }
-  .about-skills article {
-    min-height: 60vh;
-  }
-  p,
-  a {
-    font-size: 1.6rem;
-  }
-}
-
 @media only screen and (max-width: 1100px) {
   main {
     width: 70vw;
   }
-
-  .about-skills article {
-    flex: 1 1 98%;
-    height: 30vh;
-    min-height: 20vh;
-    margin-bottom: 4rem;
+  header {
+    grid-template-columns: 1fr;
   }
-}
 
-@media only screen and (max-width: 700px) {
-  main {
-    width: 90vw;
+  .about-skills {
+    grid-template-columns: 1fr;
   }
 }
